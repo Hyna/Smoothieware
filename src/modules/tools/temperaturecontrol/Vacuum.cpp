@@ -46,6 +46,13 @@ void Vacuum::UpdateConfig(uint16_t module_checksum, uint16_t name_checksum)
 
 }
 
+float Vacuum::get_temperature()
+{
+    int adc_value= new_vacuum_reading();
+    //THEKERNEL->streams->printf("adc= %d\n", adc_value);
+    return adc_value;
+
+}
 
 void Vacuum::get_raw()
 {
